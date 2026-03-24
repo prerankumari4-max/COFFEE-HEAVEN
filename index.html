@@ -1,231 +1,469 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> MY PROTFOLIO </title>
-    </head>
-    <STYLE>
-.hero{
-height:300px;
-background:linear-gradient(120deg,orange,yellow);
-color:#0b2a6b;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-font-size: 25PX;
-margin-left: 2PX;
+<head>
+    <title>Coffee Heaven</title>
+
+<style>
+html{
+    scroll-behavior: smooth;
 }
-.about{
-    background-color:rgb(229, 52, 209);
-    color:white;
-    font-size:16px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 18px;
-    align-items: center;
-    height: 100px;
-    margin:2%;
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    background-color: rgb(58, 36, 36);
+    font-family: Poppins, sans-serif;
+}
+
+/* HERO */
+.hero {
+    background-image: url("code.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
-   .skil{
- width:200px;
-height:70px;
-display:flex;
-justify-content:center;
-align-items:center;
-margin:auto;
-border-radius:10px;
-background:linear-gradient(135deg,#ff7e5f,#feb47b);
-font-size:28px;
-font-weight:bold;
-  
-  
-}
-body{
-margin:0;
-background: linear-gradient(135deg, #667eea, #764ba2);
-}
-.skill-card{
-display:inline-flex;
-justify-content:center;
-align-items:center;
-width:180px;
-height:60px;
-margin:15px;
-background:linear-gradient(135deg,#84fab0,#8fd3f4);
-border-radius:12px;
-box-shadow:0 6px 15px rgba(0,0,0,0.2);
-font-weight:bold;
-margin-left: 9%;
-}
-.resume-btn{
-display:inline-block;
-margin-top:20px;
-padding:12px 25px;
-font-size:16px;
-font-weight:bold;
-color:white;
-text-decoration:none;
-border-radius:8px;
-
-background: linear-gradient(135deg,#667eea,#764ba2);
-
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-margin-left: 45%;
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
 }
 
-.resume-btn:hover{
-transform:scale(1.05);
-}
-.soft{display:inline-flex;
-justify-content:center;
-align-items:center;
-width:180px;
-height:60px;
-margin:15px;
-background:linear-gradient(135deg,#84fab0,#8fd3f4);
-border-radius:12px;
-box-shadow:0 6px 15px rgba(0,0,0,0.2);
-font-weight:bold;
-margin-left: 9%;
-}
-    
-
-
-.SBOX{width:200px;
-height:70px;
-display:flex;
-justify-content:center;
-align-items:center;
-margin:auto;
-border-radius:10px;
-background:linear-gradient(135deg,#ff7e5f,#feb47b);
-font-size:28px;
-font-weight:bold;
-
-
-
-}
-.GIT{width:200px;
-height:70px;
-display:flex;
-justify-content:center;
-align-items:center;
-margin:auto;
-border-radius:10px;
-background:linear-gradient(135deg,#ff7e5f,#feb47b);
-font-size:28px;
-font-weight:bold;}
-.contact{
-text-align:center;
-margin-top:50px;
-padding:30px;
-
-background: linear-gradient(135deg,#ff9a9e,#fad0c4);
-
-border-radius:10px;
-}
-.projects{
-text-align:center;
-margin-top:50px;
+.text {
+    position: relative;
+    color: white;
+    font-size: 60px;
+    text-align: center;
+    font-family: cursive;
+    z-index: 1;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    animation: fadeup 1s ease forwards;
 }
 
-.project-box{
-width:350px;
-margin:auto;
-padding:20px;
-border-radius:10px;
+.hero:hover {
+    transform: scale(1.03);
+    transition: 1s;
+}
 
-background: linear-gradient(135deg,#84fab0,#8fd3f4);
+/* NAVBAR */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 10%;
+    background-color: #4b2e2e;
+    position:sticky;
+    top:0;
+    z-index: 1000;
+}
 
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: gold;
+}
+
+/* SECTION */
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+}
+
+/* IMAGE BOX */
+.box {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgb(232, 139, 90);
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* HEADING */
+h2 {
+    color: #d4af37;
+    font-size: 34px;
+    max-width: 400px;
+    line-height: 1.4;
+    animation: changingcolor 2s infinite alternate;
+}
+
+/* PARAGRAPH */
+p {
+    color: #f3f0ed;
+    font-size: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+    line-height: 1.7;
+}
+
+/* ANIMATIONS */
+@keyframes fadeup {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes changingcolor {
+    from { color: #f5e6d3; }
+    to { color: #d4af37; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .text {
+        font-size: 40px;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+.card{
+    border-radius: 25px;
+    display:flex;
+    background-color:#4b2e2e ;
+    color:white;
+    width:320px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.4) ;
+    transition:0.3s;
+    padding:20px;
+    text-align:center;
+    flex-direction: column;
+    align-items: center;
+}
+.card:hover{
+    transform:translateY(-10px)
+}
+.btn{
+    background-color: rgb(167, 124, 15);
+    padding: 10px 20px;
+border: none;
+    color:#f3f0ed;
+    transition:0.2s;
+    margin-top:auto;
+    cursor:pointer;
+    border-radius: 10px;
+    text-decoration: solid ;
+    transition: all 0.3s ease;
+}
+.btn:hover{
+    background-color: rgb(201, 89, 25);
+    color:#4b2e2e;
+    transform:scale(1.05);
+}
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 15px; /* spacing from text */
+}
+.cardcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0;
+}
+.special{
+    background-color:#3a2424;
+    color:white;
+    display:flex;
+    width:300px;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgb(200, 68, 20 ,0.5);
+    border-radius: 15px;
+    text-align: center;
+    align-items: center;
+    padding:20px;
+    transform:translateY(40px);
+    opacity:0;
+    animation: fadeup 0.6s ease forwards;
+    border-color: #d4af37;
+}
+.special-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+@keyframes fadeup{
+from{
+    opacity:0;
+    transform:translateY(40px);
 }
 
 
+    to{
+    opacity:1;
+    transform: translateY(0);
+}
+}
 
+.icon{font-size: 30px;
+margin-bottom:10px}
+.boxo{
+    background-color: #752f09;
+    color:#f3f0ed;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    padding:15px;
+    border-radius: 15px;
+    box-shadow:0 0 10px rgb(223, 118, 12 ,0.5) ;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.con {
+    background-color: #d15411;
+    color: #f3f0ed;
+    padding: 40px 20px;
+    text-align: center;
+}
 
+.con h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #fff;
+}
 
+.con p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+</style>
+</head>
 
+<body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </style>
-<body class="body">
-<DIV class="hero"><B >HI , I AM PRERNA|BCA ASPIRANT </B><BR><em><u>CODING MY WAY TO FUTURE</u></em></DIV>
-<div class="about"><b>ABOUT ME :</b><br>Hi, I'm Prerna Kumari, a web developer passionate about building modern websites.
-I enjoy creating clean, functional, and visually appealing designs.
-My goal is to build digital experiences that are useful and user-friendly.</div>
-<div class="skil"><U><B>SKILLS</B></U></div><br>
-<div class="skill-card">CSS</div>
-<DIV CLASS="skill-card">HTML</DIV>
-<div class="skill-card">MICROSOFT SUITE</div>
-<DIV class="skill-card">ADVANCED EXCEL</DIV><br>
-<DIV CLASS="skill-card">TALLY PRIME </DIV>
-<DIV CLASS="skill-card">ADOBE PHOTOSHOP</DIV>
-<DIV CLASS="skill-card">ADOBE PAGEMAKER</DIV>
-
-<DIV CLASS="SBOX">SOFT SKILLS</DIV>
-<DIV CLASS="skill-card">PRESENTATIONAL SKILLS</DIV>
-<div class="soft">PROBLEM SOLVER</div>
-<div class="soft">QUICK LEARNER</div>
-<div class="soft">CREATIVE THINKER</div>
-<div class="soft">SELF MOTIVATED</div>
-<div class="soft">ADAPTABLE</div>
-<div class="soft">PATEINCE</div>
-<div class="soft">COMMUNICATION SKILLS</div>
-
-<a href="Prerna_Kumari__Resume(4).pdf" download class="resume-btn">Download Resume</a>
-<section class="projects">
-
-<h2>Projects</h2>
-
-<div class="project-box">
-
-<h3>Personal Portfolio Website</h3>
-
-<p>
-A responsive personal portfolio website built using HTML and CSS to showcase
-my skills, projects, and contact information.
-</p>
-
-<a href="https://github.com/prernakumari4-max" target="_blank">
-View Project
-</a>
-
+<!-- HERO -->
+<div class="hero">
+    <div class="text">WELCOME TO COFFEE HEAVEN</div>
 </div>
 
-</section>
+<!-- NAV -->
+<nav class="nav">
+    <a href="#home">HOME</a>
+    <a href="#menu">MENU</a>
+    <a href="#ourspecialities">OUR SPECIALITIES</a>
+    <a href="#journey">JOURNEY</a>
+    <a href="#contact">CONTACT US</a>
+</nav>
 
-<section class="contact">
+<!-- SECTION -->
+<div class="section" id="home">
+    <div class="box">
+        <img src="tope.png">
+    </div>
 
-<h2>Contact Me</h2>
+    <h2>
+        "Warmer the cups" ☕<br>
+        "Warmer the moments" ❤️<br>
+        "Make every sip memorable" 🫰🏻
+    </h2>
+</div>
 
-<p>Email: prerankumari4@gmail.com</p>
-
+<!-- DESCRIPTION -->
 <p>
-GitHub:
-<a href="https://github.com/prernakumari4-max" target="_blank">
-github.com/prernakumari4-max
-</a>
-</p>
+Crafted from the finest handpicked beans, our coffee brings you a perfect balance of rich aroma, smooth texture, and bold flavor. 
+Sourced from carefully selected farms and roasted to perfection, every cup reflects passion, quality, and tradition.
 
-<p>
-LinkedIn:
-<a href="#">🔗 linkedin.com/in/prerna-kumari-b4a3273a3</a>
+More than just a beverage, our coffee is a natural energy booster—rich in antioxidants and known to enhance focus and uplift mood. 
+Every sip is warm, comforting, and unforgettable.
 </p>
+<h1 id="menu"></h1> 
+<div class="card" style="margin:40px auto";>EXPLORE OUR MENU</div>
+<div class="cardcontainer">
+<div class="card">
+    <img src="cappu.jpg">
+   <h3> CAPPUCCINO</h3>
+  <p>  PRICE @/200</p>
+    <button  class="btn"  >ORDER NOW</button>
+</div>
+<div class="card">
+    <img src="cappu.jpg">
+    <h3>LATTE</h3>
+       <p> PRICE  @/250</p>
+        <button class="btn">ORDER NOW</button>
+</div>
+<div class="card">
+<img src="cappu.jpg">
+ <h3>   ESPRESSO</h3>
+      <p>  PRICE     @/150</p>
+<button class="btn">ORDER NOW</button>
+</div>
+</div>
+<div class="cardcontainer">
+<div class="card">
+<img src="cappu.jpg">
+ <h3>  MOCHA</h3> 
+<p>    PRICE   @/180</p>
+<button class="btn">ORDER NOW</button>
+</div>
+<div class="card">
+<img src="cappu.jpg">
+<h3>AMERICANO</h3>
+<p>PRICE   @/200</p>
+<button class="btn">ORDER NOW</button>
+</div>
+<div class="card">
+<img src="cappu.jpg">
+<h3>FLAT-WHITE</h3>
+<p>PRICE  @/250</p>
+<button class="btn">ORDER NOW</button>
+</div>
+</div>
+<h1 id="ourspecialities"></h1>
+<div class="special"  style="margin: 40px auto";   height="200px"; >WHY CHOOSE US?</div>
+<div class="special-container">
+<div class="special" style="animation-delay: 0.2s;">
+    <div class="icon">🌱</div>
+    <h3>PREMIUM BEANS</h3>
+    <p>We use handpicked, high-quality coffee beans for a rich and authentic taste.</p>
+</div>
+<div class="special" style="animation-delay: 0.4s;">
+    <div class="icon">♨️</div>
+    <h3>FRESHLY BREWED</h3>
+    <p>
+Every cup is brewed fresh to give you the perfect aroma and flavor.</p>
+</div>
+<div class="special" style="animation-delay: 0.6s;">
+ <div class="icon">🕯️</div>
+    <h3>COZY AMBIENCE </h3>
+    <p>Enjoy your coffee in a warm, relaxing, and aesthetic environment.</p>
+</div>
+<div class="special" style="animation-delay: 0.8s;">
+    <div class="icon">👨‍🍳</div>
+    <h3>EXPERT BARISTA'S</h3>
+    <p>Our skilled baristas craft each drink with passion and precision.</p>
+</div>
+<div class="special"  style="animation-delay: 1s;"   >
+    <div class="icon">🌈</div>
+    <h3>UNIQUE FLAVOUR</h3>
+    <p>From classic espresso to signature blends, we offer something for everyone.</p>
+</div>
+<div class="special" style="animation-delay: 1.2s;">
+    <div class="icon">⚡</div>
+    <h3>FAST SERVICE</h3>
+    <p>Quick service without compromising on quality or taste.</p>
+</div>
+</div>
+<h1 id="journey"></h1>
+<div class="boxo" style="margin:40px auto";  >  FRESH COFFEE FROM OUR FARMS TO YOUR CUPS ❤️</div>
+<div class="section">
+    <div class="box">
+        <img src="plant.png">
+    </div>
+    <div class="boxo"><div class="icon">🌱</div>
+    <h3>PLANTATION</h3>
+    <p>Our coffee beans are harvested in rich and fertilized organic soil</p></div>
+</div>
+<div class="section">
+    
+    <div class="boxo">
+        <div class="icon">🧺</div>
+        <h3>
+HARVESTING
+        </h3>
+        <p> Our coffee cherries are carefully handpicked at peak ripeness to ensure the finest quality and rich flavor in every cup.</p>
+    </div>
+    <div class="box">
+        <img src="har.png">
+    </div>
+</div>
+<div class="section">
+    <div class="box">
+        <img src="pro.png">
+    </div>
+    <div class="boxo"><div class="icon">🧼</div>
+    <h3>PROCESSING</h3>
+    <p>Freshly harvested coffee cherries are carefully processed to extract the beans, preserving their natural flavors and quality.</p></div>
+</div>
+<div class="section">
+    
+    <div class="boxo">
+        <div class="icon">☀️</div>
+        <h3>
+DRYING
+        </h3>
+        <p> The beans are gently dried under controlled conditions to reduce moisture and enhance their flavor profile.</p>
+    </div>
+    <div class="box">
+        <img src="dry.png">
+    </div>
+</div>
+<div class="section">
+    <div class="box">
+        <img src="ro.png">
+    </div>
+    <div class="boxo"><div class="icon">🔥</div>
+    <h3>ROASTING</h3>
+    <p>Our beans are expertly roasted to perfection, unlocking rich aromas and deep, complex flavors</p></div>
+</div>
+<div class="section">
+    
+    <div class="boxo">
+        <div class="icon">⚙️</div>
+        <h3>
+GRINDING
+        </h3>
+        <p> Roasted beans are precisely ground to achieve the perfect texture, ensuring a smooth and balanced brew.</p>
+    </div>
+    <div class="box">
+        <img src="grind.png">
+    </div>
+</div>
+<div class="section">
+    <div class="box">
+        <img src="bre.png">
+    </div>
+    <div class="boxo"><div class="icon">☕</div>
+    <h3>BREWING</h3>
+    <p>Finally, the ground coffee is brewed with care, delivering a rich, aromatic cup crafted to perfection.</p></div>
+</div>
+<h1 id="contact"></h1>
+<div class="con">
+    <h2>Contact Us</h2>
+    
+    <p>📞 Phone: +91 2020202020</p>
+    <p>📧 Email: coffeeheaven@gmail.com</p>
+    <p>📍 Address: H-91/52, Greater Noida</p>
+    <p>🌐 Website: www.coffeeheaven.com</p>
+</div>
 
-</section>
 
 
 </body>
