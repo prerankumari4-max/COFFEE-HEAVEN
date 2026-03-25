@@ -61,4 +61,4 @@ This project showcases a complete coffee brand experience — from menu to the j
 
 ## 🙌 Author
 
-Created by Prerna Kumari 💻✨
+Created by Prerna  💻✨
